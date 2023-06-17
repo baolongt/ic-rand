@@ -1,11 +1,11 @@
-use std::{cell::RefCell, time::Duration};
+use std::{cell::RefCell, time::Duration, ops::RangeFull};
 
 use candid::Principal;
 use getrandom::register_custom_getrandom;
 use rand::{rngs::StdRng, RngCore, SeedableRng};
 
 thread_local! {
-    static RNG: RefCell<Option<StdRng>> = RefCell::new(None);
+    pub static RNG: RefCell<Option<StdRng>> = RefCell::new(None);
 }
 
 async fn set_rand() {
