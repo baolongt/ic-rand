@@ -1,0 +1,5 @@
+service : {
+    get_random_number:() -> (nat64);
+    get_random_uuid:() -> (text);
+    get_random_block_id:() -> (text);
+}
